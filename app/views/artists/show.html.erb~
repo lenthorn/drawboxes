@@ -1,5 +1,12 @@
 <p id="notice"><%= notice %></p>
+<script type="text/javascript">
+$(document).ready(function(){
+$("table img").hover(function(){
+$("#main").attr("src",($(this).attr("src")));
+});
+});
 
+</script>
 
 <div class="sidepaintings">
 
@@ -9,8 +16,8 @@
 	<% if (index %4) == 0 %>
 		</tr><tr>
 	<%end%>	
-<td>
-		<%= image_tag(piece.artimage_url, :class =>"piecestyle") %>
+	<td>
+		<%= link_to image_tag(piece.artimage_url, :mouseover => "MM_swapImage('main','','#{piece.artimage_url}',1)") piece_path(piece.id) %>
 	</td>
 
 <% end %>
@@ -25,7 +32,7 @@
   </div>
     <div class="selectedpainting">
     <p>&nbsp;</p>
-    <img src="../_images/markleonard/markmain1.jpg" alt="The Riot" name="main" width="460" height="345" id="main" />
+    <%= image_tag(@pieces.first.artimage_url, :name=> "main", :id=>"main") %>
     <p>&nbsp;</p>
     </div>
 <div class="artistdetails">
