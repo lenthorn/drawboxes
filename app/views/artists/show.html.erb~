@@ -1,0 +1,48 @@
+<p id="notice"><%= notice %></p>
+
+
+<div class="sidepaintings">
+
+<table>
+<tr>
+<% @pieces.each_with_index do |piece,index| %>
+	<% if (index %4) == 0 %>
+		</tr><tr>
+	<%end%>	
+<td>
+		<%= image_tag(piece.artimage_url, :class =>"piecestyle") %>
+	</td>
+
+<% end %>
+</tr>
+</table>
+
+
+
+    <p>&nbsp;</p>
+   
+    <p>&nbsp;</p>
+  </div>
+    <div class="selectedpainting">
+    <p>&nbsp;</p>
+    <img src="../_images/markleonard/markmain1.jpg" alt="The Riot" name="main" width="460" height="345" id="main" />
+    <p>&nbsp;</p>
+    </div>
+<div class="artistdetails">
+    
+      <h1><%= @artist.firstname %> <%= @artist.surname %></h1>
+      
+      <p><%= @artist.bio %>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    </div>
+
+<p>
+  <b>Artistimage url:</b>
+  <%= @artist.artistimage_url %>
+</p>
+
+
+<%= link_to 'Edit', edit_artist_path(@artist) %> |
+<%= link_to 'Back', artists_path %>
