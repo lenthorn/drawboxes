@@ -17,7 +17,7 @@ $("#main").attr("src",($(this).attr("src")));
 		</tr><tr>
 	<%end%>	
 	<td>
-		<%= link_to image_tag(piece.artimage_url, :mouseover => "MM_swapImage('main','','#{piece.artimage_url}',1)") piece_path(piece.id) %>
+		<%= link_to image_tag(piece.artimage_url, :mouseover => "MM_swapImage('main','','#{piece.artimage_url}',1)"), piece_path(piece.id) %>
 	</td>
 
 <% end %>

@@ -1,5 +1,11 @@
 <p id="notice"><%= notice %></p>
+<div class="paintingmainimage">
+  <%= image_tag @piece.artimage_url %>
+</div>
 
+<div class="paintingmaindetails">
+
+<%= link_to artist.firstname + " " + artist.surname, artist_path(artist.artistid) %>
 <p>
   <b>Name:</b>
   <%= @piece.name %>
@@ -20,10 +26,7 @@
   <%= @piece.stocknumber %>
 </p>
 
-<p>
-  <b>Artimage url:</b>
-  <%= @piece.artimage_url %>
-</p>
+
 
 <p>
   <b>Artist:</b>
@@ -35,10 +38,7 @@
   <%= @piece.category %>
 </p>
 
-<p>
-  <b>Category:</b>
-  <%= @piece.category %>
-</p>
+</div>
 
 <%= link_to 'Edit', edit_piece_path(@piece) %> |
 <%= link_to 'Back', pieces_path %>

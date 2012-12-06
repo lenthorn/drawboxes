@@ -1,13 +1,11 @@
-<h1>Listing pieces</h1>
-<%= render '/pieces/categoryDistinctList' %>
-<div class="digg_pagination">
-<%= will_paginate @pieces%>
-</div>
+<h1>Product Catalog by Category</h1>
+<br />
+<h2><%= @category %></h2>
+<table class="catalog">
 <% @pieces.each do |piece| %>
 
 <div class="photos">
 <%= link_to (image_tag piece.artimage_url, :style => "height:100px"), piece %>
-</br>
 <%= link_to piece.name, piece %>
 </br>
 <%= number_to_currency( piece.price, :unit=>"&euro;") %>
@@ -24,11 +22,5 @@
 </div>
 
 <% end %>
-<div class="digg_pagination">
-<%= will_paginate @pieces%>
-</div>
-
-<div class="sidenav">
-
-</div>
+<%= render '/pieces/categoryDistinctList' %>
 <p><%= link_to 'New piece', new_piece_path %></p>

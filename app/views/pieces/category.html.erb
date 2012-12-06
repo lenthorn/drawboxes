@@ -1,6 +1,7 @@
 <h1>Product Catalog by Category</h1>
 <br />
 <h2><%= @category %></h2>
+<%= render '/pieces/categoryDistinctList' %>
 <table class="catalog">
 <% @pieces.each do |piece| %>
 
@@ -22,5 +23,5 @@
 </div>
 
 <% end %>
-<%= render '/pieces/categoryDistinctList' %>
+
 <p><%= link_to 'New piece', new_piece_path %></p>

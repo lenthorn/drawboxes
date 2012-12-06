@@ -76,6 +76,7 @@ a:hover, a:active, a:focus { /* this group of selectors will give a keyboard nav
 
 .content .mainartists img {
 	padding: 28px;
+	clip:rect(50px,60px,200px,0px);
 }
 
 .mainartists a {
@@ -89,7 +90,18 @@ a:hover, a:active, a:focus { /* this group of selectors will give a keyboard nav
 	width: 400px;
 }
 
+.sidepaintings img {
+	height: 100px;
+	width: 100px;
+}
+
 .selectedpainting {
+	float: right;
+	width: 560px;
+	height: 500px;
+}
+
+.artistdetails {
 	float: right;
 	width: 560px;
 }
@@ -121,19 +133,20 @@ a:hover, a:active, a:focus { /* this group of selectors will give a keyboard nav
 	margin: auto;
 }
 
-.artistdetails {
-	float: right;
-	width: 560px;
-}
-
 .paintingmainimage {
 	float: right;
 	width: 560px;
+	padding-bottom: 200px
 }
 
 .paintingmaindetails {
-	float: leftt;
-	width: 560px;
+	padding-top: 50px;
+	float: left;
+	width: 400px;
+}
+
+.paintingmaindetails p {
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
 
 .paintingmainimage img {
@@ -176,3 +189,50 @@ a:hover, a:active, a:focus { /* this group of selectors will give a keyboard nav
 	width: 240px;
 	height: 300px;
 }
+
+.digg_pagination {
+  background: white;
+  cursor: default;
+  /* self-clearing method: */ }
+  .digg_pagination a, .digg_pagination span, .digg_pagination em {
+    padding: 0.2em 0.5em;
+    display: block;
+    float: left;
+    margin-right: 1px; }
+  .digg_pagination .disabled {
+    color: #999999;
+    border: 1px solid #dddddd; }
+  .digg_pagination .current {
+    font-style: normal;
+    font-weight: bold;
+    background: #2EB235;
+    color: white;
+    border: 1px solid #000000; }
+  .digg_pagination a {
+    text-decoration: none;
+    color: #2EB235;
+    border: 1px solid #000000; }
+    .digg_pagination a:hover, .digg_pagination a:focus {
+      color: #006600;
+      border-color: #000033; }
+  .digg_pagination .page_info {
+    background: #2EB235;
+    color: white;
+    padding: 0.4em 0.6em;
+    width: 22em;
+    margin-bottom: 0.3em;
+    text-align: center; }
+    .digg_pagination .page_info b {
+      color: #000033;
+      background: #2EB235;
+      padding: 0.1em 0.25em; }
+  .digg_pagination:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden; }
+  * html .digg_pagination {
+    height: 1%; }
+  *:first-child + html .digg_pagination {
+    overflow: hidden; }
