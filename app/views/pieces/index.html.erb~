@@ -1,6 +1,11 @@
 <h1>Listing pieces</h1>
-<%= render '/pieces/categoryDistinctList' %>
+<div class="digg_pagination">
 <%= will_paginate @pieces%>
+</div>
+
+<%= render '/pieces/categoryDistinctList' %>
+
+
 <% @pieces.each do |piece| %>
 
 <div class="photos">
@@ -11,9 +16,11 @@
 <%= number_to_currency( piece.price, :unit=>"&euro;") %>
 </br>
 <div class="links">
-<% if session[:login] == 1 %>
-<%= link_to 'Edit', edit_piece_path(piece) %> |
-<%= link_to 'Destroy', piece, :confirm => 'Are you sure?', :method => :delete %>
+<% if current_user.admin? %>
+<td><%= link_to 'Show', piece %></td>
+<td><%= link_to 'Edit', edit_piece_path(piece) %></td>
+<td><%= link_to 'Destroy', piece, confirm: 'Are you sure?', method: :delete %></td>
+
 <% else %>
 <a href="/cart/<%= piece.id %>">Add to Cart</a><br><br>
 <% end %>
@@ -22,8 +29,13 @@
 </div>
 
 <% end %>
+<div class="digg_pagination">
 <%= will_paginate @pieces%>
-<div class="sidenav">
-
 </div>
+
+<% if current_user.admin? %>
+
 <p><%= link_to 'New piece', new_piece_path %></p>
+
+<% end %>
+

@@ -1,8 +1,10 @@
-<% @pieces = Piece.select('DISTINCT category') %>
-<div class="categoryListAll">
-<% @pieces.each do | c | %>
-<a href="/category/<%= c.category %>" id="categorylisting"><%= c.category %></a>
-<br />
+<% @piecescat = Piece.select('DISTINCT category') %>
+<div class="sidenav">
+<ul>
+<% @piecescat.each do | c | %>
+<li><a href="/category/<%= c.category %>" id="categorylisting"><%= c.category %></a>
+</li>
 <% end %>
-</div>
+</ul>
+
 

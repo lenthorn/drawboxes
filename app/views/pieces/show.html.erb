@@ -28,7 +28,7 @@
 
 <p>
   <b>Artist:</b>
-  <%= @piece.artist_id %>
+  <%= @artist.firstname %> <%= @artist.surname %>
 </p>
 
 <p>
@@ -37,6 +37,13 @@
 </p>
 
 </div>
+<% if current_user.admin? %>
+<%= link_to 'Edit', edit_piece_path(@piece) %> 
 
-<%= link_to 'Edit', edit_piece_path(@piece) %> |
+
+<% else %>
+
+<a href="/cart/<%= @piece.id %>"><img src="/assets/add.png"></a> |
+<% end %>
+
 <%= link_to 'Back', pieces_path %>

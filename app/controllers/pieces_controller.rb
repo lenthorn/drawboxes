@@ -1,9 +1,20 @@
 class PiecesController < ApplicationController
-  # GET /pieces
-  # GET /pieces.json
+ 
+ # GET /pieces
+ # GET /pieces.json
 
-  def index
-    @pieces = Piece.paginate(:per_page=>20, :page => params[:page])
+  before_filter :authenticate_user!#, :except => [:index, :show, :search]
+  before_filter :ensure_admin, :only => [:new, :create, :edit, :destroy]
+  
+
+def ensure_admin
+    unless current_user && current_user.admin?
+      render :text => "Access Error Message", :status => :unauthorized
+    end
+end
+
+ def index
+    @pieces = Piece.paginate(:per_page=>14, :page => params[:page])
 
     respond_to do |format|
       format.html # index.html.erb
@@ -15,6 +26,7 @@ class PiecesController < ApplicationController
   # GET /pieces/1.json
   def show
     @piece = Piece.find(params[:id])
+	@artist = Artist.find(@piece.artist_id)
 
     respond_to do |format|
       format.html # show.html.erb
@@ -30,6 +42,16 @@ class PiecesController < ApplicationController
    format.json { render json: @pieces }
   end
  end
+
+  def search
+    @search_term = params[:q]
+    st = "%#{params[:q]}%"
+    @pieces = Piece.where("Name like ? or Artist like ?", st, st)
+    respond_to do |format|
+    format.html # index.html.erb
+    format.json { render json: @pieces }
+   end
+  end
 
 
   # GET /pieces/new

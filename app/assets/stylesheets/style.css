@@ -112,7 +112,7 @@ a:hover, a:active, a:focus { /* this group of selectors will give a keyboard nav
 	clear: both;
 }
 
-/* ~~ miscellaneous float/clear classes ~~ */
+/*  */
 .fltrt {  /* this class can be used to float an element right in your page. The floated element must precede the element it should be next to on the page. */
 	float: right;
 	margin-left: 8px;
@@ -189,9 +189,49 @@ a:hover, a:active, a:focus { /* this group of selectors will give a keyboard nav
 	height: 300px;
 }
 
+.sidenav ul {
+	font-family: Arial, Helvetica, sans-serif;
+	list-style-type: none;
+	margin: 0px;
+	padding: 0px;
+}
+
+.sidenav li {
+	display: inline;
+}
+
+.sidenav li a {
+	color: #42413C;
+	text-decoration: none;
+	font-size: 17px;
+	display: block;
+	padding: 3px;
+	width: 240px;
+	background-color: #E5E4D7;
+	border-bottom: 1px solid #eee;
+}
+
+.sidenav li a:link, a:visited {
+	color: #42413C;
+	text-decoration: none;
+}
+
+.sidenav li a:hover {
+	background-color: #92CD00;
+	color: #fff;
+}
+
+.sidenav li a#current {
+	border-bottom: 3px solid #DAD6B7;
+	background: #00BEE4;
+}
+
 .digg_pagination {
+  clear: both;
   background: white;
   cursor: default;
+  padding-bottom: 50px;
+  
   /* self-clearing method: */ }
   .digg_pagination a, .digg_pagination span, .digg_pagination em {
     padding: 0.2em 0.5em;
@@ -204,12 +244,12 @@ a:hover, a:active, a:focus { /* this group of selectors will give a keyboard nav
   .digg_pagination .current {
     font-style: normal;
     font-weight: bold;
-    background: #2EB235;
+    background: #92CD00;
     color: white;
     border: 1px solid #000000; }
   .digg_pagination a {
     text-decoration: none;
-    color: #2EB235;
+    color: #92CD00;
     border: 1px solid #000000; }
     .digg_pagination a:hover, .digg_pagination a:focus {
       color: #006600;

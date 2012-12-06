@@ -4,8 +4,6 @@
 </div>
 
 <div class="paintingmaindetails">
-
-<%= link_to artist.firstname + " " + artist.surname, artist_path(artist.artistid) %>
 <p>
   <b>Name:</b>
   <%= @piece.name %>
@@ -30,7 +28,7 @@
 
 <p>
   <b>Artist:</b>
-  <%= @piece.artist_id %>
+  <%= @artist.firstname %> <%= @artist.surname %>
 </p>
 
 <p>
@@ -39,6 +37,13 @@
 </p>
 
 </div>
+<% if current_user.admin? %>
+<%= link_to 'Edit', edit_piece_path(@piece) %> 
 
-<%= link_to 'Edit', edit_piece_path(@piece) %> |
+
+<% else %>
+
+<a href="/cart/<%= @piece.id %>">Add to Cart</a> |
+<% end %>
+
 <%= link_to 'Back', pieces_path %>

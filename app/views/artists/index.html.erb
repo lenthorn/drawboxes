@@ -7,8 +7,12 @@
 </br>
 <%= link_to artist.firstname + " " + artist.surname, artist %> 
 </br>
+<% if current_user.admin? %>
+
 <%= link_to 'Edit', edit_artist_path(artist) %> |
 <%= link_to 'Destroy', artist, :confirm => 'Are you sure?', :method => :delete %>
+<% end %>
+
 </div>
 
 
@@ -18,5 +22,9 @@
 
 <% end %>
 
-<p><%= link_to 'New artist', new_artist_path %></p>
+<% if current_user.admin? %>
+<p><%= link_to 'New Item', new_piece_path %></p>
+<% end %>
+
+
 

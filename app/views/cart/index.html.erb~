@@ -41,9 +41,12 @@
 </table>
 <p>
 DrawBoxes
-<%= link_to 'Continue Shopping', :controller => :pieces %>
+<%= link_to (image_tag '/assets/continue.png'), :controller => :pieces %>
 
-<%= link_to 'Clear Cart', :controller => "cart", :action => "clearCart" %>
+<%= link_to (image_tag '/assets/emptycart.png'), :controller => "cart", :action => "clearCart" %>
+
+<%= link_to (image_tag '/assets/checkout.png'), :controller => "cart", :action => "createOrder" %>
+
 
 </p>
 

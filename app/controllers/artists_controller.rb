@@ -1,6 +1,16 @@
 class ArtistsController < ApplicationController
   # GET /artists
   # GET /artists.json
+
+  before_filter :authenticate_user!
+  before_filter :ensure_admin, :only => [:new, :create, :edit, :destroy]
+
+  def ensure_admin
+    unless current_user && current_user.admin?
+      render :text => "Access Error Message", :status => :unauthorized
+    end
+  end
+
   def index
     @artists = Artist.all
 

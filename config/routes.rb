@@ -1,5 +1,7 @@
 Drawboxes::Application.routes.draw do
 
+  resources :profiles
+
   get "orderitems/index"
 
   get "orderitems/show"
@@ -14,6 +16,7 @@ Drawboxes::Application.routes.draw do
 
   get "site/contact"
 
+  #get "cart/checkout"
 
  devise_for :users do
 
@@ -33,7 +36,9 @@ Drawboxes::Application.routes.draw do
   resources :pieces
 
   resources :artists
-   
+
+
+  match '/myprofile' => 'profiles#myprofile' 
 
   match '/cart' => 'cart#index'
 
@@ -55,6 +60,7 @@ Drawboxes::Application.routes.draw do
 
   match '/category/:id' => 'pieces#category'
 
+  match '/search' => 'pieces#search'
 
   root :to => 'site#home'
 
