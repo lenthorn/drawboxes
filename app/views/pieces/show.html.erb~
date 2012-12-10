@@ -5,34 +5,34 @@
 
 <div class="paintingmaindetails">
 <p>
-  <b>Name:</b>
+  <span class="productdetails">Name:</span>
   <%= @piece.name %>
 </p>
 
 <p>
-  <b>Price:</b>
-  <%= @piece.price %>
+  <span class="productdetails">Price:</span>
+  <%= number_to_currency( @piece.price, :unit=>"&euro;") %></span>
 </p>
 
 <p>
-  <b>Arttype:</b>
+  <span class="productdetails">Arttype:</span>
   <%= @piece.arttype %>
 </p>
 
 <p>
-  <b>Stocknumber:</b>
+  <span class="productdetails">Stocknumber:</span>
   <%= @piece.stocknumber %>
 </p>
 
 
 
 <p>
-  <b>Artist:</b>
+  <span class="productdetails">Artist:</span>
   <%= @artist.firstname %> <%= @artist.surname %>
 </p>
 
 <p>
-  <b>Category:</b>
+  <span class="productdetails">Category:</span>
   <%= @piece.category %>
 </p>
 
@@ -43,7 +43,8 @@
 
 <% else %>
 
-<a href="/cart/<%= @piece.id %>">Add to Cart</a> |
+<a href="/cart/<%= @piece.id %>"><img src="/assets/add.png"></a>
 <% end %>
-
-<%= link_to 'Back', pieces_path %>
+<br />
+<br />
+<%= link_to link_to (image_tag '/assets/backicon.png'), pieces_path %>

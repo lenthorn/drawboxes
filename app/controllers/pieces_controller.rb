@@ -5,7 +5,7 @@ class PiecesController < ApplicationController
 
   before_filter :authenticate_user!#, :except => [:index, :show, :search]
   before_filter :ensure_admin, :only => [:new, :create, :edit, :destroy]
-  
+  #before_filter :ensure_admin, :except => [:index, :show]
 
 def ensure_admin
     unless current_user && current_user.admin?
@@ -14,7 +14,7 @@ def ensure_admin
 end
 
  def index
-    @pieces = Piece.paginate(:per_page=>14, :page => params[:page])
+    @pieces = Piece.paginate(:per_page=>9, :page => params[:page])
 
     respond_to do |format|
       format.html # index.html.erb

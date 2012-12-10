@@ -45,11 +45,7 @@ $("#main").attr("src",($(this).attr("src")));
     <p>&nbsp;</p>
     </div>
 
-<p>
-  <b>Artistimage url:</b>
-  <%= @artist.artistimage_url %>
-</p>
 
 
 <%= link_to 'Edit', edit_artist_path(@artist) %> |
-<%= link_to 'Back', artists_path %>
+<%= link_to (image_tag '/assets/backicon.png'), artists_path %>

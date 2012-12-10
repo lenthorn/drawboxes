@@ -14,6 +14,8 @@
 <% @cart.each do | id, quantity | %>
 <% piece = Piece.find_by_id(id) %>
 <tr>
+<td>&nbsp;</td>
+</tr>
 <td>
 <div class="image">
 <%= link_to (image_tag piece.artimage_url, :style => "height:40px"), piece %>
@@ -30,6 +32,9 @@
 </tr>
 <% total += quantity * piece.price %>
 <% end %>
+<tr>
+<td>&nbsp;</td>
+</tr>
 <tr>
 <td colspan="4">
 <div class="total">Total:</div>

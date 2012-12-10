@@ -33,7 +33,7 @@ function MM_swapImage() { //v3.0
 <body>
 <div class="container">
 <div class="leftheader">
-<a href="/index.html"><img src="/assets/home.jpg" alt="Home" name="Image1" width="180" height="50" id="Image1" onmouseover="MM_swapImage('Image1','','/assets/rolloverhome.jpg',1)" onmouseout="MM_swapImgRestore()" /></a><a href="/artists.html"><img src="/assets/artists.jpg" alt="Artists" width="180" height="50" id="Image2" onmouseover="MM_swapImage('Image2','','/assets/rolloverartists.jpg',1)" onmouseout="MM_swapImgRestore()" /></a><a href="/pieces.html"><img src="/assets/delivery.jpg" alt="Delivery Information" width="180" height="50" id="Image3" onmouseover="MM_swapImage('Image3','','/assets/rolloverdelivery.jpg',1)" onmouseout="MM_swapImgRestore()" /></a> <a href="f"><img src="/assets/contact.jpg" alt="Contact Us" width="180" height="50" id="Image4" onmouseover="MM_swapImage('Image4','','/assets/rollovercontact.jpg',1)" onmouseout="MM_swapImgRestore()" /></a></div>
+<a href="/index.html"><img src="/assets/home.jpg" alt="Home" name="Image1" width="180" height="50" id="Image1" onmouseover="MM_swapImage('Image1','','/assets/rolloverhome.jpg',1)" onmouseout="MM_swapImgRestore()" /></a><a href="/artists.html"><img src="/assets/artists.jpg" alt="Artists" width="180" height="50" id="Image2" onmouseover="MM_swapImage('Image2','','/assets/rolloverartists.jpg',1)" onmouseout="MM_swapImgRestore()" /></a><a href="/pieces.html"><img src="/assets/delivery.jpg" alt="Delivery Information" width="180" height="50" id="Image3" onmouseover="MM_swapImage('Image3','','/assets/rolloverdelivery.jpg',1)" onmouseout="MM_swapImgRestore()" /></a> <a href="/contact.html"><img src="/assets/contact.jpg" alt="Contact Us" width="180" height="50" id="Image4" onmouseover="MM_swapImage('Image4','','/assets/rollovercontact.jpg',1)" onmouseout="MM_swapImgRestore()" /></a></div>
 <div class="header"><img src="/assets/banners.jpg" width="780" height="200" alt="Sphenic" /></div>
 
 <div class="adminbar">
@@ -61,17 +61,16 @@ function MM_swapImage() { //v3.0
   <table width="99%" border="0" cellspacing="0" cellpadding="0">
     <tr>
       <th align="center" valign="middle" scope="col"><a href="/home.html">Home</a></th>
-      <th scope="col"><a href="#" target="_blank">Contact Us</a></th>
-      <th scope="col"><a href="#">Artists</a></th>
-      <th scope="col"><a href="#">Delivery</a></th>
-      <th scope="col"><a href="#">Terms & Condiitons</a></th>
+      <th scope="col"><a href="/pieces.html">The Art</a></th>
+      <th scope="col"><a href="/artists.html">Artists</a></th>
       <th scope="col"><a href="#">Contact Us</a></th>
       </tr>
     <tr>
+	<th>&nbsp;</th>
+	</tr>
       <th colspan="7" align="center" valign="middle" scope="col">&copy; DrawBoxes</th>
       </tr>
     </table>
-<a href="/Admin">Login</a><a href="/logout">Logout</a>
 </div>
 </div>
 </body>

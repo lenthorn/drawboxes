@@ -13,7 +13,7 @@
 </br>
 <%= link_to piece.name, piece %>
 </br>
-<%= number_to_currency( piece.price, :unit=>"&euro;") %>
+<span class="price"><%= number_to_currency( piece.price, :unit=>"&euro;") %></span>
 </br>
 <div class="links">
 <% if current_user.admin? %>
