@@ -22,6 +22,15 @@ end
     end
   end
 
+ #def category
+  #  @pieces = Pieces.paginate(:per_page=>9, :page => params[:page])
+
+   # respond_to do |format|
+    #  format.html # category.html.erb
+     # format.json { render json: @pieces }
+   # end
+  #end
+
   # GET /pieces/1
   # GET /pieces/1.json
   def show

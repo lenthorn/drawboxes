@@ -44,12 +44,11 @@ function MM_swapImage() { //v3.0
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
 <% if user_signed_in? %>
-<div>Signed in as... <%= current_user.email %> (<%= link_to 'Sign out', destroy_user_session_path, :method => :delete %>)</div>
+<div class="login"><span class="headers">Logged in as <%= current_user.email %></span> (<%= link_to 'Sign out', destroy_user_session_path, :method => :delete %>)
 <% else %>
 <%= link_to (image_tag "/assets/register.png"), new_user_registration_path %> <%= link_to (image_tag "/assets/login.png"), new_user_session_path %>
 <% end %>
-
-
+</div>
 </div>
 
 
@@ -63,7 +62,7 @@ function MM_swapImage() { //v3.0
       <th align="center" valign="middle" scope="col"><a href="/home.html">Home</a></th>
       <th scope="col"><a href="/pieces.html">The Art</a></th>
       <th scope="col"><a href="/artists.html">Artists</a></th>
-      <th scope="col"><a href="#">Contact Us</a></th>
+      <th scope="col"><a href="/contact.html">Contact Us</a></th>
       </tr>
     <tr>
 	<th>&nbsp;</th>

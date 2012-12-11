@@ -3,13 +3,15 @@
 <p>Your Cart is empty.</p>
 <% end %>
 <% total = 0 %>
+<img class="floatright" src="/assets/shopping-cart.png" />
 <table class="cart">
 <tr>
 <td class="legend"></td>
-<td class="legend">Item</td>
-<td class="legend">Price</td>
-<td class="legend">Qty</td>
-<td class="legend">Total</td>
+<td class="legend"><span class="productheaders">Item</span></td>
+<td class="legend"><span class="productheaders">Price</span></td>
+<td class="legend"><span class="productheaders">Qty</span></td>
+<td class="legend"><span class="productheaders">Total</span></td>
+
 </tr>
 <% @cart.each do | id, quantity | %>
 <% piece = Piece.find_by_id(id) %>
@@ -37,7 +39,7 @@
 </tr>
 <tr>
 <td colspan="4">
-<div class="total">Total:</div>
+<div class="total"><span class="productheaders">Total:</span></div>
 </td>
 <td>
 <div class="price"><%= number_to_currency(total, :unit => "€") %></div>
@@ -45,7 +47,8 @@
 </tr>
 </table>
 <p>
-
+<br />
+<br />
 <%= link_to (image_tag '/assets/continue.png'), :controller => :pieces %>
 
 <%= link_to (image_tag '/assets/emptycart.png'), :controller => "cart", :action => "clearCart" %>
@@ -54,4 +57,6 @@
 
 
 </p>
+<br />
+<br />
 

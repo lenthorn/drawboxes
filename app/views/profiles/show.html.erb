@@ -1,13 +1,15 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Firstname:</b>
-  <%= @profile.firstname %>
+  <b>Welcome </b>
+  <%= @profile.firstname %>!
 </p>
-
 <p>
-  <b>Lastname:</b>
-  <%= @profile.lastname %>
+  <b>Your Details:</b>
+</p>
+<p>
+  <b>Name:</b>
+  <%= @profile.firstname + " " + @profile.lastname %>
 </p>
 
 <p>

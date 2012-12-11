@@ -44,6 +44,12 @@ a:hover {
 	text-decoration: underline;
 }
 
+a:visited { 
+	color: #71B238;
+	font-weight: bolder;
+	text-decoration: none;
+}
+
 .container {
 	width: 1060px;
 	background: #FFFFFF;
@@ -83,7 +89,7 @@ a:hover {
 
 	padding-top: 10px;
 	clear: both;
-	min-height: 450px;
+	min-height: 470px;
 	padding-left: 50px;
 	padding-right: 50px;
 }
@@ -129,11 +135,12 @@ a:hover {
 }
 
 .artistdetails p {
-	padding: 30px;
+	padding-left: 60px;
+	padding-right: 60px;
 }
 
 .artistdetails h1 {
-	padding: 30px;
+	padding-left: 60px;
 }
 
 /* ~~ The footer ~~ */
@@ -149,6 +156,10 @@ a:hover {
 
 .footer th {
 	color: white;
+}
+
+.floatright {
+	float: right;
 }
 
 /*  */
@@ -226,10 +237,17 @@ a:hover {
 	float:right;
 }
 
+.login {
+	float: right;
+}
+
 .sidenav {
 	float:left;
-	width: 240px;
-	height: 700px;
+	width: 239px;
+	height: 800px;
+	border-right: 1px;
+	border-right-style: solid;
+	border-right-color: #E5E4D7;
 }
 
 .sidenav ul {
@@ -249,7 +267,7 @@ a:hover {
 	font-size: 17px;
 	display: block;
 	padding: 3px;
-	width: 240px;
+	width: 234px;
 	background-color: #E5E4D7;
 	border-bottom: 1px solid #eee;
 }
@@ -271,6 +289,16 @@ a:hover {
 
 .productdetails {
 	color: #71B238;
+	font-weight: bolder;
+}
+
+.productheaders {
+	color: #2C6700;
+	font-weight: bolder;
+}
+
+.headers {
+	color: #555555;
 	font-weight: bolder;
 }
 

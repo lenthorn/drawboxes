@@ -1,26 +1,39 @@
 <h1>Product Catalog by Category</h1>
+<div class="digg_pagination">
+<%= will_paginate @pieces%>
+</div>
+
 <br />
 <h2><%= @category %></h2>
+<%= render '/pieces/categoryDistinctList' %>
 <table class="catalog">
 <% @pieces.each do |piece| %>
 
 <div class="photos">
 <%= link_to (image_tag piece.artimage_url, :style => "height:100px"), piece %>
+</br>
 <%= link_to piece.name, piece %>
 </br>
-<%= number_to_currency( piece.price, :unit=>"&euro;") %>
+<span class="price"><%= number_to_currency( piece.price, :unit=>"&euro;") %></span>
 </br>
 <div class="links">
 <% if session[:login] == 1 %>
 <%= link_to 'Edit', edit_piece_path(piece) %> |
 <%= link_to 'Destroy', piece, :confirm => 'Are you sure?', :method => :delete %>
 <% else %>
-<a href="/cart/<%= piece.id %>">Add to Cart</a><br><br>
+<a href="/cart/<%= piece.id %>"><img src="/assets/add.png"></a><br><br>
 <% end %>
 </div>
 
 </div>
 
 <% end %>
-<%= render '/pieces/categoryDistinctList' %>
+
+<div class="digg_pagination">
+<%= will_paginate @pieces%>
+</div>
+
+<% if current_user.admin? %>
 <p><%= link_to 'New piece', new_piece_path %></p>
+
+<% end %>

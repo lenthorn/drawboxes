@@ -1,13 +1,15 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Firstname:</b>
-  <%= @profile.firstname %>
+  <b>Welcome </b>
+  <%= @profile.firstname %>!
 </p>
-
 <p>
-  <b>Lastname:</b>
-  <%= @profile.lastname %>
+  <b>Your Details:</b>
+</p>
+<p>
+  <b>Your Details:</b>
+  <%= @profile.firstname + " " + @profile.lastname %>
 </p>
 
 <p>
@@ -20,10 +22,7 @@
   <%= @profile.contactnumber %>
 </p>
 
-<p>
-  <b>User:</b>
-  <%= @profile.user %>
-</p>
+
 
 
 <%= link_to 'Edit', edit_profile_path(@profile) %>

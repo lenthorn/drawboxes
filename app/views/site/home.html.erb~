@@ -1,8 +1,6 @@
 
 <h1>Featured Artists</h1>
 <div class="mainartists">
-
- 
     <a href="/artists/1" ><img src="/assets/damienmartin/zombies.jpg" width="263" height="300" title="Damien Martin" /></a>
 <p><a href="/artists/1">Damien Martin</a></p>
 </div>
@@ -23,7 +21,7 @@
 
 <br clear="all" />
 
-<div class="mainartists">
+<div class="mainartists">	
 
  
     <a href="/artists/6" ><img src="/assets/leepitman/villain2.jpg" width="263" height="300" title="Lee Pitman" /></a>
@@ -43,3 +41,6 @@
     <a href="/artists/8" ><img src="/assets/emmarowe/madam.jpg" width="263" height="300" title="Emma Rowe" /></a>
 <p><a href="/artists/7" >Emma Rowe</a></p>
 </div>
+<br />
+<br />
+<br />

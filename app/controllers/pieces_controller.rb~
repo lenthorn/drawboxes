@@ -14,10 +14,19 @@ def ensure_admin
 end
 
  def index
-    @pieces = Piece.paginate(:per_page=>10, :page => params[:page])
+    @pieces = Piece.paginate(:per_page=>9, :page => params[:page])
 
     respond_to do |format|
       format.html # index.html.erb
+      format.json { render json: @pieces }
+    end
+  end
+
+ def category
+    @pieces = Pieces.paginate(:per_page=>9, :page => params[:page])
+
+    respond_to do |format|
+      format.html # category.html.erb
       format.json { render json: @pieces }
     end
   end
