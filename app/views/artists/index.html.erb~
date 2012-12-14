@@ -22,8 +22,8 @@
 
 <% end %>
 
-<% if current_user.admin? %>
-<p><%= link_to 'New Item', new_item_path %></p>
+<% if current_user.try(:admin?) %>
+<p><%= link_to 'New Item', new_piece_path %></p>
 <% end %>
 
 

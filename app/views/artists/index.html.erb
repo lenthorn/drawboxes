@@ -7,7 +7,7 @@
 </br>
 <%= link_to artist.firstname + " " + artist.surname, artist %> 
 </br>
-<% if current_user.admin? %>
+<% if current_user.try(:admin?) %>
 
 <%= link_to 'Edit', edit_artist_path(artist) %> |
 <%= link_to 'Destroy', artist, :confirm => 'Are you sure?', :method => :delete %>
@@ -22,7 +22,7 @@
 
 <% end %>
 
-<% if current_user.admin? %>
+<% if current_user.try(:admin?) %>
 <p><%= link_to 'New Item', new_piece_path %></p>
 <% end %>
 

@@ -3,9 +3,9 @@ class PiecesController < ApplicationController
  # GET /pieces
  # GET /pieces.json
 
-  before_filter :authenticate_user!#, :except => [:index, :show, :search]
-  before_filter :ensure_admin, :only => [:new, :create, :edit, :destroy]
-  #before_filter :ensure_admin, :except => [:index, :show]
+  #before_filter :authenticate_user!#, :except => [:index, :show, :search]
+  #before_filter :ensure_admin, :only => [:new, :create, :edit, :destroy]
+  before_filter :ensure_admin, :except => [:index, :show, :category]
 
 def ensure_admin
     unless current_user && current_user.admin?

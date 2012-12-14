@@ -2,8 +2,9 @@ class ArtistsController < ApplicationController
   # GET /artists
   # GET /artists.json
 
-  before_filter :authenticate_user!
-  before_filter :ensure_admin, :only => [:new, :create, :edit, :destroy]
+  #before_filter :authenticate_user!
+  #before_filter :ensure_admin, :only => [:new, :create, :edit, :destroy]
+  before_filter :ensure_admin, :except => [:index, :show]
 
   def ensure_admin
     unless current_user && current_user.admin?

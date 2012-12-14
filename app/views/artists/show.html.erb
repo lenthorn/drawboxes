@@ -46,7 +46,7 @@ $("#main").attr("src",($(this).attr("src")));
     </div>
 
 
-<% if current_user.admin? %>
+<% if current_user.try(:admin?) %>
 <%= link_to 'Edit', edit_artist_path(@artist) %> |
 <% end %>
-<%= link_to (image_tag '/assets/backicon.png'), artists_path %>
+<a href="javascript:history.go(-1)"><img src="/assets/backicon.png" /></a>

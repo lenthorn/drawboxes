@@ -50,6 +50,8 @@ def createOrder
 @cart = session[:cart] || {} # Get the content of the Cart
 @cart.each do | id, quantity |
 piece = Piece.find_by_id(id)
+piece.stocknumber = piece.stocknumber - quantity
+piece.save   
 @orderitem = @order.orderitems.build(:id => piece.id, :title => piece.name, :quantity => quantity, :price => piece.price)
 @orderitem.save
 end

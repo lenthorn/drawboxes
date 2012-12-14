@@ -3,24 +3,19 @@
 <p>
   <b>Welcome </b>
   <%= @profile.firstname %>!
-</p>
-<p>
-  <b>Your Details:</b>
-</p>
-<p>
-  <b>Name:</b>
-  <%= @profile.firstname + " " + @profile.lastname %>
-</p>
 
-<p>
-  <b>Address:</b>
-  <%= @profile.address %>
-</p>
-
-<p>
-  <b>Contactnumber:</b>
-  <%= @profile.contactnumber %>
-</p>
+<img class="floatright" src="/assets/Drawboxes logo.jpg" />
+<table class="hovertable">
+<tr>
+	<th>Your Details:</th>
+</tr>
+<tr>
+<th>Name:</th><th>Address:</th><th>Contact Number:</th>
+</tr>
+<tr onmouseover="this.style.backgroundColor='#92CD00';" onmouseout="this.style.backgroundColor='#E5E4D7';">
+	<td><%= @profile.firstname + " " + @profile.lastname %></td><td><%= @profile.address %></td><td><%= @profile.contactnumber %></td>
+</tr>
+</table>
 
 
 
