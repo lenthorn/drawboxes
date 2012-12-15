@@ -4,7 +4,7 @@
   <b>Welcome </b>
   <%= @profile.firstname %>!
 
-<img class="floatright" src="Drawboxes logo.jpg" />
+<img class="floatright" src="/assets/Drawboxes logo.jpg" />
 <table class="hovertable">
 <tr>
 	<th>Your Details:</th>
@@ -21,3 +21,10 @@
 
 
 <%= link_to 'Edit', edit_profile_path(@profile) %>
+<br />
+<br />
+<br />
+<br />
+<br />
+
+<a href="javascript:history.go(-2)"><img src="/assets/backicon.png" /></a>

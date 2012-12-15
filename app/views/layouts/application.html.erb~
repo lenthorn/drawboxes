@@ -42,7 +42,11 @@ function MM_swapImage() { //v3.0
 <p class="alert"><%= alert %></p>
 <% if user_signed_in? %>
 <a href="/cart.html"><img class="floatright" src="/assets/viewcart.png" /></a>
-<div class="login"><span class="headers">Logged in as <%= current_user.email %></span> (<%= link_to 'Sign out', destroy_user_session_path, :method => :delete %>)</div>
+<img src="/assets/viewprofile.png" />
+<div class="login"><span class="headers"> <%= current_user.email %></span> (<%= link_to 'Sign out', destroy_user_session_path, :method => :delete %>)
+
+</div>
+
 
 <% else %>
 <%= link_to (image_tag "/assets/register.png"), new_user_registration_path %> <%= link_to (image_tag "/assets/login.png"), new_user_session_path %>
@@ -58,6 +62,7 @@ function MM_swapImage() { //v3.0
 
 <div class="content">
 <%= yield %>
+
 </div>
 <div class="footer">
   <table width="99%" border="0" cellspacing="0" cellpadding="0">
